@@ -1,12 +1,10 @@
-function processData(data) {
-    if (!data) {
-        return null;
-    }
-    return data.map(item => ({
-        id: item.id,
-        name: item.name,
-        processed: true
-    }));
+interface Config {
+    apiKey: string;
+    timeout: number;
 }
 
-module.exports = { processData };
+function initialize(config: Config): void {
+    console.log('Initializing...', config);
+}
+
+export { initialize, Config };
